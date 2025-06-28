@@ -1,0 +1,105 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+<h2>Your Notes</h2>
+<a href="/note/new">+ New Note</a> | <a href="/logout">Logout</a>
+<ul>
+  {% for note in user_notes %}
+    <li>
+      <h3>{{ note.title }}</h3>
+      <p>{{ note.content }}</p>
+      <a href="/note/delete/{{ note._id }}">Delete</a>
+    </li>
+  {% endfor %}
+</ul>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">Personal Notes</div>
+    <div class="navbar-user">
+      Hello, {{ username }} !
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h2>Your Notes</h2>
+      <a href="/new_note" class="add-note-btn">+ New Note</a>
+    </div>
+    <div class="notes-list">
+      {% if notes %}
+        {% for note in notes %}
+          <div class="note-card">
+            <h3>{{ note.title }}</h3>
+            <p>{{ note.content }}</p>
+            <!--<div class="note-actions">
+              <a href="/edit_note/{{ note._id }}" class="edit-btn">Edit</a>
+              <a href="/delete_note/{{ note._id }}" class="delete-btn">Delete</a>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="no-notes">You have no notes yet. Click "New Note" to add one!</p>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  
+  <!-- Navbar/Header at the top -->
+  <nav class="navbar">
+    <div class="navbar-brand">Personal Notes</div>
+    <div class="navbar-user">
+      Hello, {{ username }}!
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+
+  <!-- Notes section below -->
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h2>Your Notes</h2>
+      <a href="/new_note" class="add-note-btn">+ New Note</a>
+    </div>
+    <div class="notes-list">
+      {% if notes %}
+        {% for note in notes %}
+          <div class="note-card">
+            <h3>{{ note.title }}</h3>
+            <p>{{ note.content }}</p>
+            <div class="note-actions">
+              <a href="/edit_note/{{ note._id }}" class="edit-btn">Edit</a>
+              <a href="/delete_note/{{ note._id }}" class="delete-btn">Delete</a>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="no-notes">You have no notes yet. Click "New Note" to add one!</p>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>

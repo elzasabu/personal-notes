@@ -1,0 +1,40 @@
+<!--<!DOCTYPE html>
+<html>
+<head><title>New Note</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+<h2>New Note</h2>
+<!--
+<form method="POST">
+  <input type="text" name="title" placeholder="Note Title" required>
+  <textarea name="content" placeholder="Write your note here..." required></textarea>
+  <button type="submit">Save Note</button>
+</form>
+
+<form method="POST" action="/new_note">
+  <input type="text" name="title" placeholder="Title" required>
+  <textarea name="content" placeholder="Content" required></textarea>
+  <button type="submit">Save</button>
+</form>
+<a href="/dashboard">← Back to Dashboard</a>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Note</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="new-note-container">
+    <form class="note-form" method="POST" action="/new_note">
+      <h2>Add a New Note</h2>
+      <input type="text" name="title" placeholder="Title" required>
+      <textarea name="content" placeholder="Write your note here..." required></textarea>
+      <button type="submit">Save Note</button>
+      <a href="/dashboard" class="back-link">← Back to Dashboard</a>
+    </form>
+  </div>
+</body>
+</html>
